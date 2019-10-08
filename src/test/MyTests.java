@@ -1,14 +1,9 @@
 package test;
 
-        import com.sun.security.ntlm.Client;
-        import jkam.EchoClient;
-        import jkam.GreetClient;
+        import spellingbee.EchoClient;
         import org.junit.After;
         import org.junit.Before;
-        import org.junit.jupiter.api.BeforeAll;
         import org.junit.Test;
-
-        import jkam.GreetClient;
 
         import static org.junit.jupiter.api.Assertions.assertEquals;
 

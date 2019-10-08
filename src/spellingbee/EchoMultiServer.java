@@ -1,4 +1,4 @@
-package jkam;
+package spellingbee;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

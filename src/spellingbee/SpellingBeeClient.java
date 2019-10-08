@@ -1,4 +1,4 @@
-package jkam;
+package spellingbee;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.Scanner;
 import java.util.ArrayList;;
 
-public class SpellingBeeClient2 {
+public class SpellingBeeClient {
     private int PORT = 5555;
     private String IP = "127.0.0.1";
     private Socket clientSocket;
@@ -90,7 +90,7 @@ public class SpellingBeeClient2 {
     }
 
     public static void main(String[] args) {
-        SpellingBeeClient2 client = new SpellingBeeClient2();
+        SpellingBeeClient client = new SpellingBeeClient();
         client.runner();
     }
 }

@@ -1,4 +1,4 @@
-package jkam;
+package spellingbee;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.Scanner;
 import java.util.ArrayList;;
 
-public class SpellingBeeClient {
+public class SpellingBeeClient2 {
     private int PORT = 5555;
     private String IP = "127.0.0.1";
     private Socket clientSocket;
@@ -18,12 +18,12 @@ public class SpellingBeeClient {
     private ArrayList<String> answers = new ArrayList<>();
 
     public void startConnection(String ip, int port) {
-        
+
         try {
             clientSocket = new Socket(ip, port);
             out = new PrintWriter(clientSocket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            
+
         } catch (Exception e) {
             System.out.println("Error connecting: " + e);
         }
@@ -34,7 +34,7 @@ public class SpellingBeeClient {
             out.println(msg);
             String resp = in.readLine();
             return resp;
-            
+
         } catch (Exception e) {
             System.out.println("Error sending message: " + e);
         }
@@ -44,7 +44,7 @@ public class SpellingBeeClient {
 
     public void stopConnection() {
         try {
-            
+
             in.close();
             out.close();
             clientSocket.close();
@@ -52,7 +52,7 @@ public class SpellingBeeClient {
             System.out.println("Could not close streams and or socket. Might leak");
         }
 
-        
+
     }
 
     public String getUserInput() {
@@ -62,8 +62,8 @@ public class SpellingBeeClient {
     }
 
     public void runner() {
-        
-        
+
+
         try {
 
             this.startConnection(IP, PORT);
@@ -90,7 +90,7 @@ public class SpellingBeeClient {
     }
 
     public static void main(String[] args) {
-        SpellingBeeClient client = new SpellingBeeClient();
+        SpellingBeeClient2 client = new SpellingBeeClient2();
         client.runner();
     }
 }
